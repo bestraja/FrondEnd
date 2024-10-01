@@ -3,7 +3,7 @@ import {  ADDPRODUCT, DELETEPRODUCT, EDITPRODUCT, GETONEPRODUCT, GETPRODUCTS } f
 export const GetProducts = () => async (dispatch) => {
     try {
       
-      const res= await axios.get('http://localhost:4000/api/product')
+      const res= await axios.get('https://backenddeploy-production-4259.up.railway.app/api/product')
     
      
       dispatch({
@@ -15,7 +15,7 @@ export const GetProducts = () => async (dispatch) => {
   }}
   export const addProduct = (body,navigate) => async (dispatch) => {
     try {
-      const res= await axios.post('http://localhost:4000/api/product',body)
+      const res= await axios.post('https://backenddeploy-production-4259.up.railway.app/api/product',body)
       dispatch({
           type:ADDPRODUCT,
           Payload:res
@@ -36,7 +36,7 @@ export const GetProducts = () => async (dispatch) => {
  
  export const editProduct = (id,data,navigate) => async (dispatch) => {
      try {
-       const res= await axios.patch(`http://localhost:4000/api/product/${id}`,data)
+       const res= await axios.patch(`https://backenddeploy-production-4259.up.railway.app/api/product/${id}`,data)
        dispatch({
            type:EDITPRODUCT,
            Payload:res
@@ -51,7 +51,7 @@ export const GetProducts = () => async (dispatch) => {
  export const deleteProduct = (id) => async (dispatch) => {
   try {
 
-    const res= await axios.delete(`http://localhost:4000/api/product/${id}`)
+    const res= await axios.delete(`https://backenddeploy-production-4259.up.railway.app/api/product/${id}`)
     dispatch({
         type:DELETEPRODUCT,
         Payload:res

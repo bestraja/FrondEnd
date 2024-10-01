@@ -3,7 +3,7 @@ import {  REGISTER ,REGISTERFAILED,LOGINFAILED,GET_CURRENT_SUCCESS, GET_CURRENT_
 
 export const register = (body,navigate) => async (dispatch) => {
     try {
-      const res= await axios.post('http://localhost:4000/api/user/register',body)
+      const res= await axios.post('https://backenddeploy-production-4259.up.railway.app/api/user/register',body)
       console.log(res.data)
       dispatch({
           type:REGISTER,
@@ -18,7 +18,7 @@ export const register = (body,navigate) => async (dispatch) => {
 })}}
 export const login= (body,navigate) => async (dispatch) => {
     try {
-      const res= await axios.post('http://localhost:4000/api/user/login',body,{ 
+      const res= await axios.post('https://backenddeploy-production-4259.up.railway.app/api/user/login',body,{ 
         withCredentials: true 
      })
   
@@ -36,7 +36,7 @@ export const login= (body,navigate) => async (dispatch) => {
     const token=document.cookie.split('=')[1]
   
     try {
-      const res = await axios.get('http://localhost:4000/api/user/', { headers: { Authorization: `Bearer ${token}` } })
+      const res = await axios.get('https://backenddeploy-production-4259.up.railway.app/api/user/', { headers: { Authorization: `Bearer ${token}` } })
         dispatch({ type: GET_CURRENT_SUCCESS, payload: res.data })
         
     } catch (error) {
